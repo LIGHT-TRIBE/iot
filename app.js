@@ -13,9 +13,10 @@ var initState=()=>{socket.on('init', function(data){
 {/*initState()*/}
 
 socket.on('init', function(data) {
-console.log('socket init ', data)
-  for (var i = 0; i < data.data.length; i++){
-    matrix.setPixel(data.data[i][0],data.data[i][1],data.data[i][2],data.data[i][3],data.data[i][4])
+  var loopItem = data.data
+  console.log('socket init ', data)
+  for (var i = 0; i < loopItem.length; i++){
+    matrix.setPixel(loopItem[i][0],loopItem[i][1],loopItem[i][2],loopItem[i][3],loopItem[i][4])
   }
   // matrix.setImage(data.data)
 })

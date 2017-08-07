@@ -12,7 +12,7 @@ initState()
 
 socket.on('init', function(data) {
   for (let i of data){
-    matrix.setPixel(data[0],data[1],data[2],data[3],data[4])
+    matrix.setPixel(data.data[0],data.data[1],data.data[2],data.data[3],data.data[4])
   }
 })
 socket.on('users', function(data) {

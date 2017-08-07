@@ -1,9 +1,9 @@
-const io = require('socket.io-client');
-const LedMatrix = require("node-rpi-rgb-led-matrix");
+var io = require('socket.io-client');
+var LedMatrix = require("node-rpi-rgb-led-matrix");
 
-const socket = io.connect('https://constellation.herokuapp.com/');
+var socket = io.connect('https://constellation.herokuapp.com/');
 
-const initState=()=>{socket.on('init', function(data){
+var initState=()=>{socket.on('init', function(data){
   console.log(data)
 })}
 
@@ -11,7 +11,7 @@ const initState=()=>{socket.on('init', function(data){
 initState()
 
 socket.on('init', function(data) {
-  for (let i of data){
+  for (var i = 0; i < data.length; i++){
     matrix.setPixel(data.data[0],data.data[1],data.data[2],data.data[3],data.data[4])
   }
 })
@@ -27,7 +27,7 @@ socket.on('update', function(data) {
 
 
 
-const matrix = new LedMatrix(rows=32,chainedDisplays=2);
+var matrix = new LedMatrix(rows=32,chainedDisplays=2);
 matrix.fill(0, 0,0);
 matrix.setPixel(30,30, 0, 50, 255);
 

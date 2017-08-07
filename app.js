@@ -10,7 +10,7 @@ var initState=()=>{socket.on('init', function(data){
 })}
 
 
-initState()
+{/*initState()*/}
 
 socket.on('init', function(data) {
 console.log('socket init ', data)

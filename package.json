@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "node-rpi-rgb-led-matrix": "^0.1.0",
     "socket.io-client": "^2.0.3"
   }
 }

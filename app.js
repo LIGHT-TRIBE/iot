@@ -15,7 +15,7 @@ initState()
 socket.on('init', function(data) {
 console.log('socket init ', data)
   for (var i = 0; i < data.data.length; i++){
-    matrix.setPixel(data.data[0],data.data[1],data.data[2],data.data[3],data.data[4])
+    matrix.setPixel(data.data[i][0],data.data[i][1],data.data[i][2],data.data[i][3],data.data[i][4])
   }
 })
 socket.on('users', function(data) {
